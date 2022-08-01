@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cyber Cars</title>
+</head>
+<body>
+    <%- include('partials/navbar', {
+        nav: {
+            login: '/admin/login',
+            addCar: '/admin/car',
+            addMnfctr: '/admin/manufacturer',
+            cars: '/admin/car/update',
+            manufacturers: '/admin/manufacturer/update',
+            search: '/admin/search',
+            users: '/admin/customerDetails',
+            messages: '/admin/message',
+            status: '/admin/carstatus'
+        },
+        active: 'login'
+    }) %>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/admin/login" method="POST">
+            <div>
+                <div class="label">
+                    <label for="email">Email</label>
+                </div>
+                <input type="text" id="email" name="email">
+            </div>
+            <div>
+                <div class="label">
+                    <label for="password">Password</label>
+                </div>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div>
+                <button type="submit">Login</button>
+            </div>
+            <h1><%= data %></h1>
+        </form>
+    </div>
+</body>
+</html>

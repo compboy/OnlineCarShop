@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cyber Cars</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <div class="carContainer">
+            <% for (var i =0; i < data.length; i++ ) { %>
+                <a href="/car/<%=data[i].carID%>">
+                <div class="car">
+                    <div class="carImage"><img src="/img/car%20(<%=data[i].carID%>).jpg"></div>
+                    <div class="carName"><%= data[i].name %></div>
+                    <div class="carModel"><%= data[i].model %></div>
+                    <span class="carPrice"><%= data[i].price%></span>
+                    <div class="carSpeed">Stock: <%= data[i].stock %></div>
+                </div>
+                </a>
+            <% } %>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

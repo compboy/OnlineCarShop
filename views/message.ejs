@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cyber Cars</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <% let x = ''; %>
+        <% if (id) { %>
+            <%  x = '/' +id;  %>
+        <% } %>
+
+        <form action="/message<%=x%>" method="POST">
+            <div>
+                <div class="label">
+                    <label for="message">Ask us questions</label>
+                </div>
+                <input type="text" id="message" name="message">
+            </div>
+            
+
+            <div>
+                <button type="submit">Ask</button>
+            </div>
+            
+        </form>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

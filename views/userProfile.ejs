@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cyber Cars</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <h2>Profile</h2>
+        <form action="/user/profile/update" method="POST">
+            <div>
+                <div class="label">
+                    <label for="name">Name</label>
+                </div>
+                <input type="text" id="name" name="name" value="<%= data[0].name %>">
+            </div>
+
+            <div>
+                <div class="label">
+                    <label for="">Email</label>
+                </div>
+                <input type="text" id="" name="" value="<%= data[0].email%>" disabled>
+            </div>
+            <div>
+                <div class="label">
+                    <label for="address">Address</label>
+                </div>
+                <input type="text" id="address" name="address" value="<%= data[0].address%>">
+            </div>
+            <div>
+                <div class="label">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="<%= data[0].phoneNumber%>">
+            </div>
+            <div>
+                <div class="label">
+                    <label for="creditCard">Cradit Card</label>
+                </div>
+                <input type="text" id="creditCard" name="creditCard" value="<%= data[0].creditCard%>">
+            </div>
+            <div>
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cyber Cars</title>
+</head>
+<body>
+    <%- include('partials/navbar', {
+        nav: {
+            addCar: '/admin/car',
+            addMnfctr: '/admin/manufacturer',
+            cars: '/admin/car/update',
+            manufacturers: '/admin/manufacturer/update',
+            search: '/admin/search',
+            users: '/admin/customerDetails',
+            messages: '/admin/message',
+            status: '/admin/carstatus',
+            logout: '/admin/logout'
+        },
+        active: 'addMnfctr'
+    }) %>
+    <div class="container">
+        <h2>Manufacturers</h2>
+        <form action="/admin/manufacturer" method="POST">
+            <div>
+                <div class="label">
+                    <label for="name">Manufacturer Name</label>
+                </div>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <div class="label">
+                    <label for="country">Manufacturer Country</label>
+                </div>
+                <input type="text" id="country" name="country">
+            </div>
+
+            <div>
+                <button type="submit">Insert</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
